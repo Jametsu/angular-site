@@ -1,14 +1,14 @@
 {
-  "name": "angular-site",
+  "name": "cinderellaschool",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --configuration production --base-href /angular-site/",
+    "build:prod": "ng build --configuration production --base-href /cinderellaschool/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=/angular-site/"
+    "deploy": "ng deploy --base-href=/cinderellaschool/"
   },
   "prettier": {
     "printWidth": 100,

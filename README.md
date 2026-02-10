@@ -37,7 +37,7 @@ A modern Angular application with PrimeNG components, featuring a product catalo
 ## Project Structure
 
 ```
-angular-site/
+cinderellaschool/
 ├── src/
 │   ├── app/
 │   │   ├── services/

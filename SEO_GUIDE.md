@@ -31,7 +31,7 @@
 
 2. **Add your property:**
    - Click "Add Property"
-   - Enter: `https://jametsu.github.io/angular-site/`
+   - Enter: `https://jametsu.github.io/cinderellaschool/`
 
 3. **Verify ownership:**
    - Choose HTML tag method
@@ -45,7 +45,7 @@
 
 4. **Submit your sitemap:**
    - In Search Console, go to "Sitemaps"
-   - Add: `https://jametsu.github.io/angular-site/sitemap.xml`
+   - Add: `https://jametsu.github.io/cinderellaschool/sitemap.xml`
    - Click "Submit"
 
 ### Step 2: Submit to Bing Webmaster Tools
@@ -126,7 +126,7 @@ Your site is now optimized for:
 
 1. **Google search:** 
    ```
-   site:jametsu.github.io/angular-site
+   site:jametsu.github.io/cinderellaschool
    ```
 
 2. **Should show:** Your homepage in results

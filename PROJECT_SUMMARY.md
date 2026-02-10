@@ -49,7 +49,7 @@ A modern, production-ready Angular website with PrimeNG components, configured f
 ## Project Structure
 
 ```
-angular-site/
+cinderellaschool/
 ├── 📄 Configuration Files
 │   ├── angular.json           # Angular CLI configuration
 │   ├── package.json           # Dependencies and scripts
@@ -181,7 +181,7 @@ Simply run: `./deploy.sh`
 - **Provider-based**: Uses `providePrimeNG()` for standalone components
 
 ### Build Configuration
-- **Output**: `dist/angular-site/`
+- **Output**: `dist/cinderellaschool/`
 - **Base Href**: `/site/` (for GitHub Pages)
 - **Bundle Size**: ~1.05 MB (optimized for production)
 - **Optimization**: Enabled in production

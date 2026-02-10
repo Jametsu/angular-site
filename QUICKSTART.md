@@ -120,7 +120,7 @@ Or simply:
 ## Project Structure
 
 ```
-angular-site/
+cinderellaschool/
 ├── src/
 │   ├── app/
 │   │   ├── services/

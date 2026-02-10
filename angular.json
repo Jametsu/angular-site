@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "angular-site": {
+    "cinderellaschool": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -67,10 +67,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-site:build:production"
+              "buildTarget": "cinderellaschool:build:production"
             },
             "development": {
-              "buildTarget": "angular-site:build:development"
+              "buildTarget": "cinderellaschool:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -11,7 +11,7 @@ Every time you push code to the `main` branch, GitHub automatically:
 3. ✅ Installs dependencies
 4. ✅ Builds your Angular app for production
 5. ✅ Deploys to GitHub Pages
-6. ✅ Your site is live at: https://jametsu.github.io/angular-site/
+6. ✅ Your site is live at: https://jametsu.github.io/cinderellaschool/
 
 ## ⚡ Workflow Trigger
 
@@ -34,7 +34,7 @@ on:
 
 ### View Workflow Status
 
-1. Go to your repository: https://github.com/Jametsu/angular-site
+1. Go to your repository: https://github.com/Jametsu/cinderellaschool
 2. Click the **Actions** tab
 3. You'll see all deployment runs with status:
    - ✅ Green checkmark = Success
@@ -43,7 +43,7 @@ on:
 
 ### View Live Deployment
 
-1. Go to: https://github.com/Jametsu/angular-site/deployments
+1. Go to: https://github.com/Jametsu/cinderellaschool/deployments
 2. See all deployment history
 3. Click on a deployment to see details
 
@@ -62,7 +62,7 @@ git push origin main
 # GitHub Actions automatically builds and deploys! 🎉
 ```
 
-Wait 1-2 minutes, then visit: https://jametsu.github.io/angular-site/
+Wait 1-2 minutes, then visit: https://jametsu.github.io/cinderellaschool/
 
 ### Option 2: Manual Deployment
 
@@ -85,8 +85,8 @@ npm start
 
 # Or test production build locally
 npm run build:prod
-npx http-server dist/angular-site/browser -p 8080
-# Visit http://localhost:8080/angular-site/
+npx http-server dist/cinderellaschool/browser -p 8080
+# Visit http://localhost:8080/cinderellaschool/
 ```
 
 ## 📊 Deployment Timing
@@ -181,10 +181,10 @@ Use GitHub Actions Slack/Discord integrations for deployment notifications.
 Add this to your README.md to show build status:
 
 ```markdown
-![Deploy Status](https://github.com/Jametsu/angular-site/actions/workflows/deploy.yml/badge.svg)
+![Deploy Status](https://github.com/Jametsu/cinderellaschool/actions/workflows/deploy.yml/badge.svg)
 ```
 
-Result: ![Deploy Status](https://github.com/Jametsu/angular-site/actions/workflows/deploy.yml/badge.svg)
+Result: ![Deploy Status](https://github.com/Jametsu/cinderellaschool/actions/workflows/deploy.yml/badge.svg)
 
 ## 🎉 Summary
 

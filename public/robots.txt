@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://jametsu.github.io/angular-site/sitemap.xml
+Sitemap: https://jametsu.github.io/cinderellaschool/sitemap.xml
