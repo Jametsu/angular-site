@@ -40,6 +40,11 @@
   .header-actions {
     display: flex;
     gap: 0.5rem;
+    ::ng-deep .p-button {
+      color: white;
+      border-color: white;
+      background-color: transparent;
+    }
   }
 }
 

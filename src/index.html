@@ -2,10 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>AngularSite</title>
+  <title>Rhythm & Motion Dance Academy | Dance Classes in Milan</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Rhythm & Motion Dance Academy in Milan offers ballet, contemporary, hip-hop, salsa, and jazz dance classes for all levels. Join our experienced instructors for professional dance training.">
+  <meta name="keywords" content="dance school, dance academy, Milan, ballet classes, contemporary dance, hip-hop, salsa, jazz dance, dance lessons, kids dance classes">
+  <meta name="author" content="Rhythm & Motion Dance Academy">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jametsu.github.io/angular-site/">
+  <meta property="og:title" content="Rhythm & Motion Dance Academy | Dance Classes in Milan">
+  <meta property="og:description" content="Professional dance classes for all ages and levels. Ballet, Contemporary, Hip-Hop, Salsa, Jazz, and Kids Dance.">
+  <meta property="og:image" content="https://jametsu.github.io/angular-site/favicon.ico">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://jametsu.github.io/angular-site/">
+  <meta property="twitter:title" content="Rhythm & Motion Dance Academy | Dance Classes in Milan">
+  <meta property="twitter:description" content="Professional dance classes for all ages and levels. Ballet, Contemporary, Hip-Hop, Salsa, Jazz, and Kids Dance.">
+  <meta property="twitter:image" content="https://jametsu.github.io/angular-site/favicon.ico">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://jametsu.github.io/angular-site/">
+  
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Structured Data (JSON-LD) for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DanceSchool",
+    "name": "Rhythm & Motion Dance Academy",
+    "description": "Professional dance academy offering ballet, contemporary, hip-hop, salsa, and jazz classes for all ages and skill levels.",
+    "url": "https://jametsu.github.io/angular-site/",
+    "telephone": "+39 02 1234 5678",
+    "email": "info@rhythmmotion.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via della Danza 123",
+      "addressLocality": "Milan",
+      "postalCode": "20100",
+      "addressCountry": "IT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "45.4642",
+      "longitude": "9.1900"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "16:00",
+        "closes": "21:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "10:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "13:00"
+      }
+    ],
+    "sameAs": [
+      "https://instagram.com/@rhythmmotion",
+      "https://facebook.com/rhythmmotiondance",
+      "https://youtube.com/@RhythmMotionAcademy"
+    ]
+  }
+  </script>
 </head>
 <body>
   <app-root></app-root>
