@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Ballet for Beginners",
+    "level": "Beginner",
+    "instructor": "Maria Santos",
+    "duration": "60 min",
+    "price": "€80/month",
+    "description": "Introduction to classical ballet technique, perfect for those starting their dance journey."
+  },
+  {
+    "id": 2,
+    "name": "Contemporary Dance",
+    "level": "Intermediate",
+    "instructor": "Laura Bianchi",
+    "duration": "75 min",
+    "price": "€90/month",
+    "description": "Explore modern movement and expression through contemporary dance techniques."
+  },
+  {
+    "id": 3,
+    "name": "Hip-Hop",
+    "level": "All Levels",
+    "instructor": "Marco Villa",
+    "duration": "60 min",
+    "price": "€85/month",
+    "description": "Learn urban dance styles with high energy and creative choreography."
+  },
+  {
+    "id": 4,
+    "name": "Salsa & Latin",
+    "level": "Beginner",
+    "instructor": "Carlos Rodriguez",
+    "duration": "60 min",
+    "price": "€75/month",
+    "description": "Feel the rhythm of Latin music while learning salsa, bachata, and merengue."
+  },
+  {
+    "id": 5,
+    "name": "Jazz Dance",
+    "level": "Intermediate",
+    "instructor": "Sophie Martin",
+    "duration": "60 min",
+    "price": "€85/month",
+    "description": "Dynamic and expressive jazz technique with Broadway-style choreography."
+  },
+  {
+    "id": 6,
+    "name": "Kids Dance (Ages 6-10)",
+    "level": "Beginner",
+    "instructor": "Emma Rossi",
+    "duration": "45 min",
+    "price": "€60/month",
+    "description": "Fun and creative dance classes designed specifically for young dancers."
+  }
+]

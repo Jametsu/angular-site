@@ -1,0 +1,145 @@
+[
+  {
+    "day": "Monday",
+    "classes": [
+      {
+        "time": "17:00 - 18:00",
+        "course": "Ballet for Beginners",
+        "instructor": "Maria Santos",
+        "room": "Studio A"
+      },
+      {
+        "time": "18:30 - 19:30",
+        "course": "Hip-Hop",
+        "instructor": "Marco Villa",
+        "room": "Studio B"
+      },
+      {
+        "time": "20:00 - 21:15",
+        "course": "Contemporary Dance",
+        "instructor": "Laura Bianchi",
+        "room": "Studio A"
+      }
+    ]
+  },
+  {
+    "day": "Tuesday",
+    "classes": [
+      {
+        "time": "16:00 - 16:45",
+        "course": "Kids Dance (Ages 6-10)",
+        "instructor": "Emma Rossi",
+        "room": "Studio B"
+      },
+      {
+        "time": "18:00 - 19:00",
+        "course": "Salsa & Latin",
+        "instructor": "Carlos Rodriguez",
+        "room": "Studio A"
+      },
+      {
+        "time": "19:30 - 20:30",
+        "course": "Jazz Dance",
+        "instructor": "Sophie Martin",
+        "room": "Studio B"
+      }
+    ]
+  },
+  {
+    "day": "Wednesday",
+    "classes": [
+      {
+        "time": "17:00 - 18:00",
+        "course": "Hip-Hop",
+        "instructor": "Marco Villa",
+        "room": "Studio B"
+      },
+      {
+        "time": "18:30 - 19:30",
+        "course": "Ballet for Beginners",
+        "instructor": "Maria Santos",
+        "room": "Studio A"
+      },
+      {
+        "time": "20:00 - 21:00",
+        "course": "Salsa & Latin",
+        "instructor": "Carlos Rodriguez",
+        "room": "Studio A"
+      }
+    ]
+  },
+  {
+    "day": "Thursday",
+    "classes": [
+      {
+        "time": "17:00 - 18:15",
+        "course": "Contemporary Dance",
+        "instructor": "Laura Bianchi",
+        "room": "Studio A"
+      },
+      {
+        "time": "18:30 - 19:30",
+        "course": "Jazz Dance",
+        "instructor": "Sophie Martin",
+        "room": "Studio B"
+      },
+      {
+        "time": "20:00 - 20:45",
+        "course": "Kids Dance (Ages 6-10)",
+        "instructor": "Emma Rossi",
+        "room": "Studio B"
+      }
+    ]
+  },
+  {
+    "day": "Friday",
+    "classes": [
+      {
+        "time": "18:00 - 19:00",
+        "course": "Hip-Hop",
+        "instructor": "Marco Villa",
+        "room": "Studio B"
+      },
+      {
+        "time": "19:30 - 20:30",
+        "course": "Ballet for Beginners",
+        "instructor": "Maria Santos",
+        "room": "Studio A"
+      }
+    ]
+  },
+  {
+    "day": "Saturday",
+    "classes": [
+      {
+        "time": "10:00 - 10:45",
+        "course": "Kids Dance (Ages 6-10)",
+        "instructor": "Emma Rossi",
+        "room": "Studio B"
+      },
+      {
+        "time": "11:00 - 12:15",
+        "course": "Contemporary Dance",
+        "instructor": "Laura Bianchi",
+        "room": "Studio A"
+      },
+      {
+        "time": "14:00 - 15:00",
+        "course": "Salsa & Latin",
+        "instructor": "Carlos Rodriguez",
+        "room": "Studio A"
+      }
+    ]
+  },
+  {
+    "day": "Sunday",
+    "classes": [
+      {
+        "time": "10:00 - 11:00",
+        "course": "Jazz Dance",
+        "instructor": "Sophie Martin",
+        "room": "Studio B"
+      }
+    ]
+  }
+]
