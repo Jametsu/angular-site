@@ -1,26 +1,22 @@
 {
-  "schoolName": "Rhythm & Motion Dance Academy",
+  "schoolName": "Cinderella School of Ballet",
   "tagline": "Where passion meets movement",
   "address": {
-    "street": "Via della Danza 123",
-    "city": "Milan",
-    "postalCode": "20100",
+    "street": "Viale dei Carpani 7",
+    "city": "Castelfranco Veneto",
+    "postalCode": "31033",
     "country": "Italy"
   },
   "contact": {
-    "phone": "+39 02 1234 5678",
-    "email": "info@rhythmmotion.com",
-    "whatsapp": "+39 333 456 7890"
+    "phone": "+39 351 5150 770",
+    "email": "cinderellaschool@libero.it",
+    "whatsapp": "3515150770"
   },
   "hours": {
-    "weekdays": "16:00 - 21:30",
-    "saturday": "10:00 - 18:00",
-    "sunday": "10:00 - 13:00"
+    "weekdays": "16:00 - 21:30"
   },
   "social": {
-    "instagram": "@rhythmmotion",
-    "facebook": "rhythmmotiondance",
-    "youtube": "@RhythmMotionAcademy"
+    "facebook": "Cinderella-School-of-Ballet-253223491458314"
   },
-  "about": "Welcome to Rhythm & Motion Dance Academy, where we believe dance is more than just movement—it's a way of life. Since 2015, we've been inspiring dancers of all ages and skill levels to express themselves through the art of dance. Our experienced instructors create a supportive environment where students can grow, learn, and discover their unique style."
+  "about": "Welcome to Cinderella School of Ballet, where we believe dance is more than just movement—it's a way of life. Since 2026, we've been inspiring dancers of all ages and skill levels to express themselves through the art of dance. Our experienced instructors create a supportive environment where students can grow, learn, and discover their unique style."
 }
