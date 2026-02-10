@@ -3,6 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--p-surface-ground);
 }
 
 // Header
@@ -49,6 +50,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 1rem;
+  background: var(--p-surface-ground);
 }
 
 // Tabs - Hide text labels on mobile
