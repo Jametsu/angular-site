@@ -135,13 +135,13 @@
       gap: 1rem;
     }
     
-    .class-item {
+      .class-item {
       display: flex;
       gap: 1rem;
       padding: 1rem;
       border: 1px solid var(--p-surface-border);
       border-radius: 6px;
-      background: var(--p-surface-50);
+      background: var(--p-surface-card);
       
       .class-time {
         display: flex;
@@ -196,7 +196,7 @@
     
     .course-header {
       padding: 1.25rem;
-      background: var(--p-surface-100);
+      background: var(--p-surface-hover);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -294,7 +294,7 @@
   
   .social-media {
     padding: 1.5rem;
-    background: var(--p-surface-100);
+    background: var(--p-surface-hover);
     border-radius: 8px;
     
     h3 {
@@ -336,7 +336,7 @@
 
 // Footer
 .site-footer {
-  background: var(--p-surface-50);
+  background: var(--p-surface-card);
   padding: 1.5rem;
   text-align: center;
   color: var(--p-text-secondary-color);
@@ -462,6 +462,6 @@
   }
   
   .class-item {
-    background: var(--p-surface-100);
+    background: var(--p-surface-card);
   }
 }
