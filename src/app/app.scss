@@ -101,6 +101,8 @@
     &:hover {
       .p-button-label {
         text-decoration: none;
+        color:var(--p-button-primary-hover-background);
+        font-weight: 600;
       }
     }
   }
@@ -493,6 +495,8 @@
         &:hover {
           .p-button-label {
             text-decoration: none;
+            color:var(--p-button-primary-hover-background);
+            font-weight: 600;
           }
         }
       }
@@ -543,13 +547,13 @@
         border-radius: 6px;
         background: var(--p-surface-card);
         color: var(--p-text-color);
-        text-decoration: none;
         width: 100%;
         
         &:hover {
           background: var(--p-surface-hover);
-          transform: translateY(-2px);
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          text-decoration: none;
+          color:var(--p-button-primary-hover-background);
+          font-weight: 600;
         }
         
         i {

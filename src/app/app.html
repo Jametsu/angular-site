@@ -76,7 +76,7 @@
               <div class="about-content">
                 <!--<p class="about-text">{{ schoolInfo?.about }}</p>-->
                 
-                <!-- Today's Classes Section with Animation -->
+                <!-- Today's Classes Section -->
                 <div class="todays-classes-section" pAnimateOnScroll enterClass="animate__animated animate__fadeInUp">
                   <h3 class="section-title">
                     <i class="pi pi-calendar-clock"></i>
@@ -110,7 +110,7 @@
                       size="small" />
                   </div>
                 </div>
-                
+                <!-- Info Grid Section -->
                 <div class="info-grid">
 
                   <div class="info-card" pAnimateOnScroll enterClass="animate__animated animate__fadeInUp">
@@ -177,7 +177,6 @@
                       [(ngModel)]="selectedScheduleLevel"
                       [options]="levelOptions"
                       placeholder="Filtra per livello"
-                      [showClear]="true"
                       styleClass="level-filter" />
                   </div>
                 </div>
@@ -217,7 +216,6 @@
                       [(ngModel)]="selectedLevel"
                       [options]="levelOptions"
                       placeholder="Filtra per livello"
-                      [showClear]="true"
                       styleClass="level-filter" />
                   </div>
                 </div>
