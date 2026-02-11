@@ -19,21 +19,21 @@
 
   <!-- Main Content -->
   <main class="main-content">
-    <p-tabs [value]="0">
+    <p-tabs [value]="activeTab()">
       <p-tablist>
-        <p-tab [value]="0">
+        <p-tab [value]="0" (click)="navigateToTab(0)">
           <i class="pi pi-home"></i>
           <span class="tab-label">Home</span>
         </p-tab>
-        <p-tab [value]="1">
+        <p-tab [value]="1" (click)="navigateToTab(1)">
           <i class="pi pi-calendar"></i>
           <span class="tab-label">Orari</span>
         </p-tab>
-        <p-tab [value]="2">
+        <p-tab [value]="2" (click)="navigateToTab(2)">
           <i class="pi pi-book"></i>
           <span class="tab-label">Corsi</span>
         </p-tab>
-        <p-tab [value]="3">
+        <p-tab [value]="3" (click)="navigateToTab(3)">
           <i class="pi pi-phone"></i>
           <span class="tab-label">Contatti</span>
         </p-tab>
@@ -43,62 +43,125 @@
         <!-- Home Tab -->
         <p-tabpanel [value]="0">
           <div class="home-section">
-            <p-card>
-              <ng-template pTemplate="header">
-                <div class="hero-header">
-                  <h2>Welcome to Cinderella School of Ballet</h2>
-                </div>
-              </ng-template>
+              
+              <!-- Hero Carousel -->
+              <div class="hero-carousel-section">
+                <p-carousel 
+                  [value]="carouselItems" 
+                  [numVisible]="1" 
+                  [numScroll]="1" 
+                  [circular]="true"
+                  [autoplayInterval]="5000"
+                  [showIndicators]="true"
+                  [showNavigators]="true"
+                  [responsiveOptions]="carouselResponsiveOptions">
+                  <ng-template let-item pTemplate="item">
+                    <div class="carousel-item">
+                      <div class="carousel-image">
+                        <img [src]="item.image" [alt]="item.title" />
+                      </div>
+                      <div class="carousel-content">
+                        <h2>{{ item.title }}</h2>
+                        <p>{{ item.description }}</p>
+                        <p-button 
+                          [label]="item.cta" 
+                          icon="pi pi-arrow-right"
+                          size="large" />
+                      </div>
+                    </div>
+                  </ng-template>
+                </p-carousel>
+              </div>
               
               <div class="about-content">
-                <p class="about-text">{{ schoolInfo?.about }}</p>
+                <!--<p class="about-text">{{ schoolInfo?.about }}</p>-->
+                
+                <!-- Today's Classes Section with Animation -->
+                <div class="todays-classes-section" pAnimateOnScroll enterClass="animate__animated animate__fadeInUp">
+                  <h3 class="section-title">
+                    <i class="pi pi-calendar-clock"></i>
+                    Lezioni di Oggi
+                  </h3>
+                  
+                  <div *ngIf="todaysClasses.length > 0" class="todays-classes-list">
+                    <div *ngFor="let class of todaysClasses" class="today-class-item">
+                      <div class="class-time">
+                        <i class="pi pi-clock"></i>
+                        {{ class.time }}
+                      </div>
+                      <div class="class-details">
+                        <h4>{{ class.course }}</h4>
+                        <p class="instructor">{{ class.instructor }}</p>
+                        <p class="room">{{ class.room }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div *ngIf="todaysClasses.length === 0" class="no-classes">
+                    <i class="pi pi-info-circle"></i>
+                    <p>Nessuna lezione oggi</p>
+                  </div>
+                  
+                  <div class="todays-classes-actions">
+                    <p-button 
+                      label="Tutte le Lezioni"
+                      icon="pi pi-calendar"
+                      (onClick)="navigateToTab(1)"
+                      size="small" />
+                  </div>
+                </div>
                 
                 <div class="info-grid">
 
-                  <div class="info-card">
+                  <div class="info-card" pAnimateOnScroll enterClass="animate__animated animate__fadeInUp">
                     <i class="pi pi-user info-icon"></i>
                     <h3>Contatti</h3>
                     <div class="info-details">
                       <p class="contact-item">
                         <i class="pi pi-phone contact-icon"></i>
-                        <a [href]="'tel:' + schoolInfo?.contact?.phone">{{ schoolInfo?.contact?.phone }}</a>
+                        <p-button 
+                          [label]="schoolInfo?.contact?.phone"
+                          [link]="true"
+                          (onClick)="window.location.href = 'tel:' + schoolInfo?.contact?.phone" />
                       </p>
                       <p class="contact-item">
                         <i class="pi pi-envelope contact-icon"></i>
-                        <a [href]="'mailto:' + schoolInfo?.contact?.email">{{ schoolInfo?.contact?.email }}</a>
+                        <p-button 
+                          [label]="schoolInfo?.contact?.email"
+                          [link]="true"
+                          (onClick)="window.location.href = 'mailto:' + schoolInfo?.contact?.email" />
                       </p>
                       <p class="contact-item">
                         <i class="pi pi-whatsapp contact-icon"></i>
-                        <a [href]="'https://wa.me/' + schoolInfo?.contact?.whatsapp?.replace(/[^0-9]/g, '')">
-                          {{ schoolInfo?.contact?.whatsapp }}
-                        </a>
+                        <p-button 
+                          [label]="schoolInfo?.contact?.whatsapp"
+                          [link]="true"
+                          (onClick)="window.location.href = 'https://wa.me/' + schoolInfo?.contact?.whatsapp?.replace(/[^0-9]/g, '')" />
                       </p>
                     </div>
                   </div>
                   
-                  <div class="info-card">
+                  <div class="info-card" pAnimateOnScroll enterClass="animate__animated animate__fadeInUp">
                     <i class="pi pi-map-marker info-icon"></i>
                     <h3>Location</h3>
                     <div class="info-details">
-                      <a [href]="'https://www.google.com/maps/place/Cinderella+School+of+Ballet/@45.6813198,11.9327403,17z/data=!3m1!4b1!4m6!3m5!1s0x477929e42f683a03:0x7f0118aab4a1014d!8m2!3d45.6813198!4d11.9327403!16s%2Fg%2F11h6f9gl5f?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D'">
-                        <p>{{ schoolInfo?.address?.street }}</p>
-                        <p>{{ schoolInfo?.address?.postalCode }} {{ schoolInfo?.address?.city }}</p>
-                        <p>{{ schoolInfo?.address?.country }}</p>
-                      </a>
+                      <p-button 
+                        label="View on Google Maps"
+                        [link]="true"
+                        (onClick)="window.open('https://www.google.com/maps/place/Cinderella+School+of+Ballet/@45.6813198,11.9327403,17z/data=!3m1!4b1!4m6!3m5!1s0x477929e42f683a03:0x7f0118aab4a1014d!8m2!3d45.6813198!4d11.9327403!16s%2Fg%2F11h6f9gl5f?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D', '_blank')" />
                     </div>
                   </div>
 
-                  <div class="info-card">
+                  <div class="info-card" pAnimateOnScroll enterClass="animate__animated animate__fadeInUp">
                     <i class="pi pi-clock info-icon"></i>
                     <h3>Orari</h3>
                     <div class="info-details">
                       <p><strong>Mon-Fri:</strong> {{ schoolInfo?.hours?.weekdays }}</p>
                     </div>
                   </div>
-                  
+      
                 </div>
               </div>
-            </p-card>
           </div>
         </p-tabpanel>
 
@@ -109,11 +172,19 @@
               <ng-template pTemplate="header">
                 <div class="card-header">
                   <h2>Orario settimanale</h2>
+                  <div class="header-actions">
+                    <p-select 
+                      [(ngModel)]="selectedScheduleLevel"
+                      [options]="levelOptions"
+                      placeholder="Filtra per livello"
+                      [showClear]="true"
+                      styleClass="level-filter" />
+                  </div>
                 </div>
               </ng-template>
               
               <div class="schedule-grid">
-                <div *ngFor="let day of schedule" class="day-schedule">
+                <div *ngFor="let day of filteredSchedule" class="day-schedule">
                   <h3 class="day-name">{{ day.day }}</h3>
                   <div class="classes-list">
                     <div *ngFor="let class of day.classes" class="class-item">
@@ -141,11 +212,19 @@
               <ng-template pTemplate="header">
                 <div class="card-header">
                   <h2>Corsi</h2>
+                  <div class="header-actions">
+                    <p-select 
+                      [(ngModel)]="selectedLevel"
+                      [options]="levelOptions"
+                      placeholder="Filtra per livello"
+                      [showClear]="true"
+                      styleClass="level-filter" />
+                  </div>
                 </div>
               </ng-template>
               
               <div class="courses-grid">
-                <div *ngFor="let course of courses" class="course-card">
+                <div *ngFor="let course of filteredCourses" class="course-card">
                   <div class="course-header">
                     <h3>{{ course.name }}</h3>
                     <p-tag 
@@ -194,7 +273,10 @@
                     <i class="pi pi-phone contact-icon"></i>
                     <div>
                       <h3>Telefono</h3>
-                      <a [href]="'tel:' + schoolInfo?.contact?.phone">{{ schoolInfo?.contact?.phone }}</a>
+                      <p-button 
+                        [label]="schoolInfo?.contact?.phone"
+                        [link]="true"
+                        (onClick)="window.location.href = 'tel:' + schoolInfo?.contact?.phone" />
                     </div>
                   </div>
                   
@@ -202,7 +284,10 @@
                     <i class="pi pi-envelope contact-icon"></i>
                     <div>
                       <h3>Email</h3>
-                      <a [href]="'mailto:' + schoolInfo?.contact?.email">{{ schoolInfo?.contact?.email }}</a>
+                      <p-button 
+                        [label]="schoolInfo?.contact?.email"
+                        [link]="true"
+                        (onClick)="window.location.href = 'mailto:' + schoolInfo?.contact?.email" />
                     </div>
                   </div>
                   
@@ -210,9 +295,10 @@
                     <i class="pi pi-whatsapp contact-icon"></i>
                     <div>
                       <h3>WhatsApp</h3>
-                      <a [href]="'https://wa.me/' + schoolInfo?.contact?.whatsapp?.replace(/[^0-9]/g, '')">
-                        {{ schoolInfo?.contact?.whatsapp }}
-                      </a>
+                      <p-button 
+                        [label]="schoolInfo?.contact?.whatsapp"
+                        [link]="true"
+                        (onClick)="window.location.href = 'https://wa.me/' + schoolInfo?.contact?.whatsapp?.replace(/[^0-9]/g, '')" />
                     </div>
                   </div>
                   
@@ -220,11 +306,13 @@
                     <i class="pi pi-map-marker contact-icon"></i>
                     <div>
                       <h3>Address</h3>
-                      <a [href]="'https://www.google.com/maps/place/Cinderella+School+of+Ballet/@45.6813198,11.9327403,17z/data=!3m1!4b1!4m6!3m5!1s0x477929e42f683a03:0x7f0118aab4a1014d!8m2!3d45.6813198!4d11.9327403!16s%2Fg%2F11h6f9gl5f?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D'">
-                        <p>{{ schoolInfo?.address?.street }}</p>
-                        <p>{{ schoolInfo?.address?.postalCode }} {{ schoolInfo?.address?.city }}</p>
-                        <p>{{ schoolInfo?.address?.country }}</p>
-                      </a>
+                      <p-button 
+                        label="View on Google Maps"
+                        [link]="true"
+                        (onClick)="window.open('https://www.google.com/maps/place/Cinderella+School+of+Ballet/@45.6813198,11.9327403,17z/data=!3m1!4b1!4m6!3m5!1s0x477929e42f683a03:0x7f0118aab4a1014d!8m2!3d45.6813198!4d11.9327403!16s%2Fg%2F11h6f9gl5f?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D', '_blank')" />
+                      <p>{{ schoolInfo?.address?.street }}</p>
+                      <p>{{ schoolInfo?.address?.postalCode }} {{ schoolInfo?.address?.city }}</p>
+                      <p>{{ schoolInfo?.address?.country }}</p>
                     </div>
                   </div>
                 </div>
@@ -232,18 +320,24 @@
                 <div class="social-media">
                   <h3>Follow Us</h3>
                   <div class="social-links">
-                    <!--<a [href]="'https://instagram.com/' + schoolInfo?.social?.instagram" target="_blank" class="social-link">
-                      <i class="pi pi-instagram"></i>
-                      <span>{{ schoolInfo?.social?.instagram }}</span>
-                    </a>-->
-                    <a [href]="'https://facebook.com/Cinderella-School-of-Ballet-253223491458314'" target="_blank" class="social-link">
-                      <i class="pi pi-facebook"></i>
-                      <span>{{ schoolInfo?.social?.facebook }}</span>
-                    </a>
-                    <!--<a [href]="'https://youtube.com/' + schoolInfo?.social?.youtube" target="_blank" class="social-link">
-                      <i class="pi pi-youtube"></i>
-                      <span>{{ schoolInfo?.social?.youtube }}</span>
-                    </a>-->
+                    <!--<p-button 
+                      [label]="schoolInfo?.social?.instagram"
+                      icon="pi pi-instagram"
+                      [link]="true"
+                      (onClick)="window.open('https://instagram.com/' + schoolInfo?.social?.instagram, '_blank')"
+                      styleClass="social-link" />-->
+                    <p-button 
+                      [label]="schoolInfo?.social?.facebook"
+                      icon="pi pi-facebook"
+                      [link]="true"
+                      (onClick)="window.open('https://facebook.com/Cinderella-School-of-Ballet-253223491458314', '_blank')"
+                      styleClass="social-link" />
+                    <!--<p-button 
+                      [label]="schoolInfo?.social?.youtube"
+                      icon="pi pi-youtube"
+                      [link]="true"
+                      (onClick)="window.open('https://youtube.com/' + schoolInfo?.social?.youtube, '_blank')"
+                      styleClass="social-link" />-->
                   </div>
                 </div>
               </div>

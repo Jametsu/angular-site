@@ -107,39 +107,5 @@
         "room": "Studio A"
       }
     ]
-  },
-  {
-    "day": "Saturday",
-    "classes": [
-      {
-        "time": "10:00 - 10:45",
-        "course": "Kids Dance (Ages 6-10)",
-        "instructor": "Emma Rossi",
-        "room": "Studio B"
-      },
-      {
-        "time": "11:00 - 12:15",
-        "course": "Contemporary Dance",
-        "instructor": "Laura Bianchi",
-        "room": "Studio A"
-      },
-      {
-        "time": "14:00 - 15:00",
-        "course": "Salsa & Latin",
-        "instructor": "Carlos Rodriguez",
-        "room": "Studio A"
-      }
-    ]
-  },
-  {
-    "day": "Sunday",
-    "classes": [
-      {
-        "time": "10:00 - 11:00",
-        "course": "Jazz Dance",
-        "instructor": "Sophie Martin",
-        "room": "Studio B"
-      }
-    ]
   }
 ]
