@@ -3,7 +3,7 @@
   <header class="site-header">
     <div class="header-content">
       <div class="logo-section">
-        <h1>{{ schoolInfo?.schoolName || 'Dance Academy' }}</h1>
+        <h1>{{ schoolInfo?.schoolName }}</h1>
         <p class="tagline">{{ schoolInfo?.tagline }}</p>
       </div>
       <div class="header-actions">
@@ -27,15 +27,15 @@
         </p-tab>
         <p-tab [value]="1">
           <i class="pi pi-calendar"></i>
-          <span class="tab-label">Schedule</span>
+          <span class="tab-label">Orari</span>
         </p-tab>
         <p-tab [value]="2">
           <i class="pi pi-book"></i>
-          <span class="tab-label">Courses</span>
+          <span class="tab-label">Corsi</span>
         </p-tab>
         <p-tab [value]="3">
           <i class="pi pi-phone"></i>
-          <span class="tab-label">Contact</span>
+          <span class="tab-label">Contatti</span>
         </p-tab>
       </p-tablist>
 
@@ -46,7 +46,7 @@
             <p-card>
               <ng-template pTemplate="header">
                 <div class="hero-header">
-                  <h2>Welcome to Our Dance Academy</h2>
+                  <h2>Welcome to Cinderella School of Ballet</h2>
                 </div>
               </ng-template>
               
@@ -54,13 +54,25 @@
                 <p class="about-text">{{ schoolInfo?.about }}</p>
                 
                 <div class="info-grid">
+
                   <div class="info-card">
-                    <i class="pi pi-clock info-icon"></i>
-                    <h3>Opening Hours</h3>
+                    <i class="pi pi-user info-icon"></i>
+                    <h3>Contatti</h3>
                     <div class="info-details">
-                      <p><strong>Mon-Fri:</strong> {{ schoolInfo?.hours?.weekdays }}</p>
-                      <p><strong>Saturday:</strong> {{ schoolInfo?.hours?.saturday }}</p>
-                      <p><strong>Sunday:</strong> {{ schoolInfo?.hours?.sunday }}</p>
+                      <p class="contact-item">
+                        <i class="pi pi-phone contact-icon"></i>
+                        <a [href]="'tel:' + schoolInfo?.contact?.phone">{{ schoolInfo?.contact?.phone }}</a>
+                      </p>
+                      <p class="contact-item">
+                        <i class="pi pi-envelope contact-icon"></i>
+                        <a [href]="'mailto:' + schoolInfo?.contact?.email">{{ schoolInfo?.contact?.email }}</a>
+                      </p>
+                      <p class="contact-item">
+                        <i class="pi pi-whatsapp contact-icon"></i>
+                        <a [href]="'https://wa.me/' + schoolInfo?.contact?.whatsapp?.replace(/[^0-9]/g, '')">
+                          {{ schoolInfo?.contact?.whatsapp }}
+                        </a>
+                      </p>
                     </div>
                   </div>
                   
@@ -68,21 +80,22 @@
                     <i class="pi pi-map-marker info-icon"></i>
                     <h3>Location</h3>
                     <div class="info-details">
-                      <p>{{ schoolInfo?.address?.street }}</p>
-                      <p>{{ schoolInfo?.address?.postalCode }} {{ schoolInfo?.address?.city }}</p>
-                      <p>{{ schoolInfo?.address?.country }}</p>
+                      <a [href]="'https://www.google.com/maps/place/Cinderella+School+of+Ballet/@45.6813198,11.9327403,17z/data=!3m1!4b1!4m6!3m5!1s0x477929e42f683a03:0x7f0118aab4a1014d!8m2!3d45.6813198!4d11.9327403!16s%2Fg%2F11h6f9gl5f?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D'">
+                        <p>{{ schoolInfo?.address?.street }}</p>
+                        <p>{{ schoolInfo?.address?.postalCode }} {{ schoolInfo?.address?.city }}</p>
+                        <p>{{ schoolInfo?.address?.country }}</p>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="info-card">
+                    <i class="pi pi-clock info-icon"></i>
+                    <h3>Orari</h3>
+                    <div class="info-details">
+                      <p><strong>Mon-Fri:</strong> {{ schoolInfo?.hours?.weekdays }}</p>
                     </div>
                   </div>
                   
-                  <div class="info-card">
-                    <i class="pi pi-users info-icon"></i>
-                    <h3>Why Choose Us</h3>
-                    <div class="info-details">
-                      <p>✓ Expert Instructors</p>
-                      <p>✓ All Skill Levels</p>
-                      <p>✓ Modern Studios</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </p-card>
@@ -95,7 +108,7 @@
             <p-card>
               <ng-template pTemplate="header">
                 <div class="card-header">
-                  <h2>Weekly Schedule</h2>
+                  <h2>Orario settimanale</h2>
                 </div>
               </ng-template>
               
@@ -127,7 +140,7 @@
             <p-card>
               <ng-template pTemplate="header">
                 <div class="card-header">
-                  <h2>Our Courses</h2>
+                  <h2>Corsi</h2>
                 </div>
               </ng-template>
               
@@ -171,7 +184,7 @@
             <p-card>
               <ng-template pTemplate="header">
                 <div class="card-header">
-                  <h2>Get in Touch</h2>
+                  <h2>Contatti</h2>
                 </div>
               </ng-template>
               
@@ -180,7 +193,7 @@
                   <div class="contact-item">
                     <i class="pi pi-phone contact-icon"></i>
                     <div>
-                      <h3>Phone</h3>
+                      <h3>Telefono</h3>
                       <a [href]="'tel:' + schoolInfo?.contact?.phone">{{ schoolInfo?.contact?.phone }}</a>
                     </div>
                   </div>
@@ -207,9 +220,11 @@
                     <i class="pi pi-map-marker contact-icon"></i>
                     <div>
                       <h3>Address</h3>
-                      <p>{{ schoolInfo?.address?.street }}<br>
-                         {{ schoolInfo?.address?.postalCode }} {{ schoolInfo?.address?.city }}<br>
-                         {{ schoolInfo?.address?.country }}</p>
+                      <a [href]="'https://www.google.com/maps/place/Cinderella+School+of+Ballet/@45.6813198,11.9327403,17z/data=!3m1!4b1!4m6!3m5!1s0x477929e42f683a03:0x7f0118aab4a1014d!8m2!3d45.6813198!4d11.9327403!16s%2Fg%2F11h6f9gl5f?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D'">
+                        <p>{{ schoolInfo?.address?.street }}</p>
+                        <p>{{ schoolInfo?.address?.postalCode }} {{ schoolInfo?.address?.city }}</p>
+                        <p>{{ schoolInfo?.address?.country }}</p>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -217,18 +232,18 @@
                 <div class="social-media">
                   <h3>Follow Us</h3>
                   <div class="social-links">
-                    <a [href]="'https://instagram.com/' + schoolInfo?.social?.instagram" target="_blank" class="social-link">
+                    <!--<a [href]="'https://instagram.com/' + schoolInfo?.social?.instagram" target="_blank" class="social-link">
                       <i class="pi pi-instagram"></i>
                       <span>{{ schoolInfo?.social?.instagram }}</span>
-                    </a>
-                    <a [href]="'https://facebook.com/' + schoolInfo?.social?.facebook" target="_blank" class="social-link">
+                    </a>-->
+                    <a [href]="'https://facebook.com/Cinderella-School-of-Ballet-253223491458314'" target="_blank" class="social-link">
                       <i class="pi pi-facebook"></i>
                       <span>{{ schoolInfo?.social?.facebook }}</span>
                     </a>
-                    <a [href]="'https://youtube.com/' + schoolInfo?.social?.youtube" target="_blank" class="social-link">
+                    <!--<a [href]="'https://youtube.com/' + schoolInfo?.social?.youtube" target="_blank" class="social-link">
                       <i class="pi pi-youtube"></i>
                       <span>{{ schoolInfo?.social?.youtube }}</span>
-                    </a>
+                    </a>-->
                   </div>
                 </div>
               </div>

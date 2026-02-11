@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal, ChangeDetectorRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Button } from 'primeng/button';
@@ -28,6 +28,7 @@ import { DataService, Course, DaySchedule, SchoolInfo } from './services/data.se
 })
 export class App implements OnInit {
   private dataService = inject(DataService);
+  private cdr = inject(ChangeDetectorRef);
   
   isDarkMode = signal(false);
   schoolInfo: SchoolInfo | null = null;
@@ -46,6 +47,7 @@ export class App implements OnInit {
     this.dataService.getSchoolInfo().subscribe({
       next: (data) => {
         this.schoolInfo = data;
+        this.cdr.detectChanges();
       },
       error: (err) => console.error('Error loading school info:', err)
     });
@@ -53,6 +55,7 @@ export class App implements OnInit {
     this.dataService.getCourses().subscribe({
       next: (data) => {
         this.courses = data;
+        this.cdr.detectChanges();
       },
       error: (err) => console.error('Error loading courses:', err)
     });
@@ -61,10 +64,12 @@ export class App implements OnInit {
       next: (data) => {
         this.schedule = data;
         this.loading = false;
+        this.cdr.detectChanges();
       },
       error: (err) => {
         console.error('Error loading schedule:', err);
         this.loading = false;
+        this.cdr.detectChanges();
       }
     });
   }

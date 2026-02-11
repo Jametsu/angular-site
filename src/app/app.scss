@@ -8,7 +8,7 @@
 
 // Header
 .site-header {
-  background: var(--p-primary-color);
+  background: var(--p-primary-950);
   color: white;
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -55,7 +55,37 @@
   width: 100%;
   margin: 0 auto;
   padding: 1rem;
-  background: var(--p-surface-ground);
+  background: var(--p-card-background);
+  
+  // Make tabs sticky at the top
+  ::ng-deep .p-tabs {
+    .p-tablist {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--p-card-background);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: -1rem -1rem 1rem -1rem;
+      padding: 1rem;
+      padding-bottom: 0;
+
+      .p-tablist-tab-list {
+        display: flex;
+        justify-content: space-between;
+
+        p-tab{
+          width: 25%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .pi {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Tabs - Hide text labels on mobile
@@ -68,7 +98,7 @@
   .hero-header {
     padding: 1.5rem;
     text-align: center;
-    background: linear-gradient(135deg, var(--p-primary-color), var(--p-primary-600));
+    background: linear-gradient(135deg, var(--p-primary-950), var(--p-primary-900));
     color: white;
     border-radius: 8px 8px 0 0;
     
@@ -97,7 +127,7 @@
     
     .info-icon {
       font-size: 2rem;
-      color: var(--p-primary-color);
+      color: var(--p-primary-700);
       margin-bottom: 1rem;
     }
     
@@ -108,6 +138,13 @@
     
     .info-details {
       color: var(--p-text-secondary-color);
+
+      .contact-item {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+      }
       
       p {
         margin: 0.5rem 0;
@@ -126,7 +163,7 @@
   
   .day-schedule {
     .day-name {
-      background: var(--p-primary-color);
+      background: var(--p-primary-950);
       color: white;
       padding: 0.75rem 1rem;
       margin: 0 0 1rem;
@@ -152,7 +189,7 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        color: var(--p-primary-color);
+        color: var(--p-primary-700);
         font-weight: 600;
         min-width: 120px;
         font-size: 0.875rem;
@@ -237,7 +274,7 @@
           font-size: 0.9rem;
           
           i {
-            color: var(--p-primary-color);
+            color: var(--p-primary-700);
           }
         }
       }
@@ -266,11 +303,11 @@
     .contact-item {
       display: flex;
       gap: 1rem;
-      align-items: flex-start;
+      align-items: center;
       
       .contact-icon {
         font-size: 1.75rem;
-        color: var(--p-primary-color);
+        color: var(--p-primary-700);
         min-width: 40px;
       }
       
@@ -281,7 +318,7 @@
       }
       
       a {
-        color: var(--p-primary-color);
+        color: var(--p-primary-700);
         text-decoration: none;
         
         &:hover {
@@ -332,7 +369,7 @@
         
         i {
           font-size: 1.5rem;
-          color: var(--p-primary-color);
+          color: var(--p-primary-700);
         }
       }
     }
@@ -356,7 +393,7 @@
 // Card Headers
 .card-header {
   padding: 1.25rem;
-  background: var(--p-primary-color);
+  background: var(--p-primary-950);
   color: white;
   
   h2 {
@@ -383,6 +420,19 @@
   
   .main-content {
     padding: 2rem;
+    
+    // Adjust sticky tabs padding for larger screens
+    ::ng-deep .p-tabs{
+      .p-tablist {
+        margin: -2rem -2rem 1.5rem -2rem;
+        padding: 1.5rem 2rem;
+        padding-bottom: 0;
+
+        .p-tablist-tab-list {
+          justify-content: flex-start;
+        }
+      }
+    }
   }
   
   .tab-label {
@@ -459,11 +509,11 @@
 // Dark Mode Specific Overrides
 :host-context(.dark-mode) {
   .site-header {
-    background: var(--p-primary-600);
+    background: var(--p-primary-950);
   }
   
   .hero-header {
-    background: linear-gradient(135deg, var(--p-primary-600), var(--p-primary-700)) !important;
+    background: linear-gradient(135deg, var(--p-primary-950), var(--p-primary-900)) !important;
   }
   
   .class-item {

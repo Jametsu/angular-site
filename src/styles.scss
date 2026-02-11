@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition-duration: 0.4s;
+  transition-property: background-color;
+  transition-timing-function: ease-in-out;
 }
 
 html {
@@ -15,7 +18,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   background-color: var(--p-surface-ground);
   color: var(--p-text-color);
-  transition: background-color 0.3s, color 0.3s;
   min-height: 100vh;
 }
 
@@ -34,23 +36,11 @@ html, body {
   }
 }
 
-// Smooth transitions for theme changes
-* {
-  transition-property: background-color, color, border-color;
-  transition-duration: 0.2s;
-  transition-timing-function: ease;
-}
-
 // Mobile optimization
 @media (max-width: 767px) {
   html {
     font-size: 14px;
   }
-}
-
-// Accessibility improvements
-a {
-  transition: color 0.2s ease;
 }
 
 button, a {
